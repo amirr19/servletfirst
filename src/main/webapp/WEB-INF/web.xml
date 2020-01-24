@@ -1,0 +1,78 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+    <context-param>
+        <param-name>course</param-name>
+        <param-value>JAVA</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>teacher</param-name>
+        <param-value>Mr. Noori</param-value>
+    </context-param>
+
+    <filter>
+        <filter-name>StudentFilter</filter-name>
+        <filter-class>ir.maktab.StudentFilter</filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>JavaStudentFilter</filter-name>
+        <filter-class>ir.maktab.JavaStudentFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>StudentFilter</filter-name>
+        <url-pattern>
+            /page
+        </url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>JavaStudentFilter</filter-name>
+        <url-pattern>
+            /page
+        </url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>DehghaniServlet</servlet-name>
+        <servlet-class>ir.maktab.MyServlet1</servlet-class>
+
+        <init-param>
+            <param-name>age</param-name>
+            <param-value>26</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet>
+        <servlet-name>RahmaniServlet</servlet-name>
+        <servlet-class>ir.maktab.MyServlet2</servlet-class>
+
+        <init-param>
+            <param-name>age</param-name>
+            <param-value>29</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>PageServlet</servlet-name>
+        <servlet-class>ir.maktab.PageServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>DehghaniServlet</servlet-name>
+        <url-pattern>/dehqhani</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RahmaniServlet</servlet-name>
+        <url-pattern>/rahmani</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>PageServlet</servlet-name>
+        <url-pattern>/page</url-pattern>
+    </servlet-mapping>
+
+</web-app>
